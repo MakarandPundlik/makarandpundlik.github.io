@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Makarand Pundlik - Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "secondary": "#ffffff",
+                        "border-light": "#e5e5e5",
+                        "border-dark": "#000000",
+                    },
+                    fontFamily: {
+                        "display": ["Ubuntu", "sans-serif"],
+                        "body": ["Ubuntu", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0",
+                        "lg": "0",
+                        "xl": "0",
+                        "full": "0"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .bg-grid-pattern {
+                background-image: linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+                linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+                background-size: 40px 40px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-display min-h-screen flex flex-col antialiased selection:bg-black selection:text-white">
+<div class="relative flex w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-black px-6 md:px-10 py-6 sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
+<div class="flex items-center gap-4">
+<div class="size-10 flex items-center justify-center bg-black text-white">
+<span class="material-symbols-outlined text-xl">terminal</span>
+</div>
+<h2 class="text-black text-xl font-bold leading-tight tracking-tight uppercase">Makarand Pundlik</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-10 items-center">
+<nav class="flex items-center gap-10">
+<a class="text-neutral-600 hover:text-black transition-colors text-sm font-medium uppercase tracking-widest" href="#work">Work</a>
+<a class="text-neutral-600 hover:text-black transition-colors text-sm font-medium uppercase tracking-widest" href="#projects">Projects</a>
+<a class="text-neutral-600 hover:text-black transition-colors text-sm font-medium uppercase tracking-widest" href="#about">About</a>
+<a class="text-neutral-600 hover:text-black transition-colors text-sm font-medium uppercase tracking-widest" href="https://docs.google.com/document/d/1WFTIWwFEpdRbqklGuAf1HgJ-pRRT_bYM3pEqos5887U/edit?usp=sharing" target="_blank" rel="noopener">Resume</a>
+</nav>
+<a class="flex cursor-pointer items-center justify-center h-10 px-8 bg-black hover:bg-neutral-800 transition-colors text-white text-sm font-bold uppercase tracking-widest border border-black" href="mailto:makarand.us@gmail.com">
+<span class="truncate">Contact</span>
+</a>
+</div>
+<button class="md:hidden text-black" aria-label="Open menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex flex-col items-center px-4 md:px-10 lg:px-40 py-16">
+<div class="max-w-[1024px] w-full flex flex-col gap-24">
+<section class="@container">
+<div class="flex flex-col gap-10 md:gap-14 py-10 md:py-16">
+<div class="flex flex-col gap-8 text-left max-w-4xl">
+<h1 class="text-black text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
+                                Hi, I'm Makarand.<br/>
+<span class="text-neutral-500">Software Engineer building scalable cloud systems.</span>
+</h1>
+<h2 class="text-neutral-600 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+                                Passionate about distributed systems, cloud computing, and full-stack development. Currently pursuing my Master's at <span class="text-black font-medium border-b border-black">North Carolina State University</span> (CGPA 3.89/4.0).
+                            </h2>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="flex cursor-pointer items-center justify-center h-14 px-10 bg-black text-white hover:bg-neutral-800 transition-colors text-sm font-bold uppercase tracking-widest" href="#projects">View Projects</a>
+<a class="flex cursor-pointer items-center justify-center h-14 px-10 border border-black bg-white text-black hover:bg-neutral-50 text-sm font-bold uppercase tracking-widest transition-colors" href="https://docs.google.com/document/d/1WFTIWwFEpdRbqklGuAf1HgJ-pRRT_bYM3pEqos5887U/edit?usp=sharing" target="_blank" rel="noopener">Download Resume</a>
+</div>
+</div>
+</section>
+<section id="about">
+<h3 class="text-black text-sm font-bold uppercase tracking-widest mb-8 border-b border-black pb-2 inline-block">Tech Stack</h3>
+<div class="flex flex-wrap gap-3">
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">code</span><p class="text-black text-sm font-medium">TypeScript</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">javascript</span><p class="text-black text-sm font-medium">JavaScript</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">code</span><p class="text-black text-sm font-medium">Python</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">terminal</span><p class="text-black text-sm font-medium">Java</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">cloud</span><p class="text-black text-sm font-medium">AWS</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">deployed_code</span><p class="text-black text-sm font-medium">Docker</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">anchor</span><p class="text-black text-sm font-medium">Kubernetes</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">web</span><p class="text-black text-sm font-medium">React</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">javascript</span><p class="text-black text-sm font-medium">Node.js</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">web</span><p class="text-black text-sm font-medium">Angular</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">database</span><p class="text-black text-sm font-medium">DynamoDB</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">database</span><p class="text-black text-sm font-medium">PostgreSQL</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">database</span><p class="text-black text-sm font-medium">MongoDB</p></div>
+<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">database</span><p class="text-black text-sm font-medium">Elasticsearch</p></div>
+</div>
+</section>
+<section class="flex flex-col gap-10" id="work">
+<h3 class="text-black text-3xl font-bold leading-tight tracking-tight pb-4 border-b-2 border-black">Experience</h3>
+<div class="group relative flex gap-8 pb-8 last:pb-0">
+<div class="mt-1 hidden sm:flex flex-col items-center">
+<div class="flex h-4 w-4 items-center justify-center bg-black"></div>
+<div class="h-full w-px bg-neutral-300 mt-0"></div>
+</div>
+<div class="flex flex-1 flex-col gap-3">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+<h4 class="text-black text-2xl font-bold">Software Engineer Intern</h4>
+<span class="text-neutral-500 text-sm font-medium font-mono">May 2025 - June 2025</span>
+</div>
+<div class="text-black font-semibold text-base uppercase tracking-wider mb-3">Bestwork, New York, NY</div>
+<ul class="list-disc list-outside ml-5 text-neutral-700 text-base leading-relaxed mb-4 font-medium space-y-2">
+<li>Integrated Node.js (TypeScript) backend systems with Salesforce and HubSpot via RESTful webhooks, enabling seamless CRM data synchronization and reducing manual data entry by 80%.</li>
+<li>Developed AI-driven sales assistant using LLM APIs and Amazon Bedrock with S3-based knowledge base, implementing Lambda functions for periodic synchronization and improving sales team productivity.</li>
+</ul>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Node.js</span>
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">TypeScript</span>
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">AWS</span>
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Bedrock</span>
+</div>
+</div>
+</div>
+<div class="group relative flex gap-8 pb-8 last:pb-0">
+<div class="mt-1 hidden sm:flex flex-col items-center">
+<div class="flex h-4 w-4 items-center justify-center bg-black"></div>
+<div class="h-full w-px bg-neutral-300 mt-0"></div>
+</div>
+<div class="flex flex-1 flex-col gap-3">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+<h4 class="text-black text-2xl font-bold">Software Engineer</h4>
+<span class="text-neutral-500 text-sm font-medium font-mono">July 2022 - July 2024</span>
+</div>
+<div class="text-black font-semibold text-base uppercase tracking-wider mb-3">NiCE Ltd, Pune, IN</div>
+<ul class="list-disc list-outside ml-5 text-neutral-700 text-base leading-relaxed mb-4 font-medium space-y-2">
+<li>Optimized bulk upload API performance by 70% through algorithm optimization, achieving 300ms latency for processing 100 files.</li>
+<li>Reduced development costs by $10K annually through LocalStack and Docker for local AWS simulation.</li>
+<li>Enhanced system performance by 50% by optimizing DynamoDB and S3 authentication flows with JWT caching in Lambda.</li>
+<li>Resolved critical production issues in high-traffic US-East-1 FedRAMP region, ensuring 99.9% uptime.</li>
+<li>Architected scalable Node.js microservices on AWS (Lambda, SQS, EventBridge, CloudWatch, Elasticsearch) for high-throughput background processing and automated data retention.</li>
+<li>Built multi-cloud Angular (TypeScript) UI components and automated UI test suites with Jasmine, Karma, and Playwright.</li>
+</ul>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Node.js</span>
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Angular</span>
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">AWS</span>
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">DynamoDB</span>
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Docker</span>
+</div>
+</div>
+</div>
+<div class="group relative flex gap-8 pb-8 last:pb-0">
+<div class="mt-1 hidden sm:flex flex-col items-center">
+<div class="flex h-4 w-4 items-center justify-center bg-black"></div>
+<div class="h-full w-px bg-neutral-300 mt-0"></div>
+</div>
+<div class="flex flex-1 flex-col gap-3">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+<h4 class="text-black text-2xl font-bold">Project Intern</h4>
+<span class="text-neutral-500 text-sm font-medium font-mono">August 2021 - March 2022</span>
+</div>
+<div class="text-black font-semibold text-base uppercase tracking-wider mb-3">IMATMI, New Jersey, Remote</div>
+<ul class="list-disc list-outside ml-5 text-neutral-700 text-base leading-relaxed mb-4 font-medium space-y-2">
+<li>Implemented secure multi-role authentication using Node.js, Material UI, OAuth2, and JWT for role-based access control.</li>
+<li>Designed complete database architecture for a social platform serving children with ADHD and learning disabilities, implementing MongoDB aggregation queries and optimizing analytics performance by 35%.</li>
+<li>Built responsive React.js dashboards and workflows with Material UI, reducing navigation friction and user-reported UI issues.</li>
+</ul>
+<div class="flex flex-wrap gap-2">
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Node.js</span>
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">React</span>
+<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">MongoDB</span>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-10" id="projects">
+<h3 class="text-black text-3xl font-bold leading-tight tracking-tight pb-4 border-b-2 border-black">Featured Projects</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group flex flex-col border border-black bg-white p-8 hover:bg-neutral-50 transition-all duration-300">
+<div class="flex items-center justify-between mb-6">
+<div class="flex h-12 w-12 items-center justify-center bg-black text-white">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<a class="text-black hover:opacity-60 transition-opacity" href="https://github.com/MakarandPundlik" target="_blank" rel="noopener" aria-label="CampusCrush project"><span class="material-symbols-outlined">arrow_outward</span></a>
+</div>
+<h4 class="text-black text-xl font-bold mb-3">CampusCrush</h4>
+<p class="text-neutral-600 text-sm leading-relaxed mb-8 flex-grow font-light">
+                                Serverless campus social platform built with AWS Lambda (Node.js), API Gateway, SQS, DynamoDB, and real-time event-driven architecture. Dating app for NC State students with interest-based matching.
+                            </p>
+<div class="flex flex-wrap gap-2 mt-auto border-t border-neutral-200 pt-4">
+<span class="text-xs font-bold text-black uppercase tracking-wider">AWS</span>
+<span class="text-xs font-bold text-black uppercase tracking-wider">Node.js</span>
+<span class="text-xs font-bold text-black uppercase tracking-wider">DynamoDB</span>
+</div>
+</div>
+<div class="group flex flex-col border border-black bg-white p-8 hover:bg-neutral-50 transition-all duration-300">
+<div class="flex items-center justify-between mb-6">
+<div class="flex h-12 w-12 items-center justify-center bg-black text-white">
+<span class="material-symbols-outlined">map</span>
+</div>
+<a class="text-black hover:opacity-60 transition-opacity" href="https://github.com/MakarandPundlik/PackTravel" target="_blank" rel="noopener" aria-label="PackTravel project"><span class="material-symbols-outlined">arrow_outward</span></a>
+</div>
+<h4 class="text-black text-xl font-bold mb-3">PackTravel</h4>
+<p class="text-neutral-600 text-sm leading-relaxed mb-8 flex-grow font-light">
+                                Collaborative trip planning app with real-time sync using Django, PostgreSQL &amp; Google Maps APIs. Helps students travel off-campus by cab, rental car, and more.
+                            </p>
+<div class="flex flex-wrap gap-2 mt-auto border-t border-neutral-200 pt-4">
+<span class="text-xs font-bold text-black uppercase tracking-wider">Django</span>
+<span class="text-xs font-bold text-black uppercase tracking-wider">PostgreSQL</span>
+<span class="text-xs font-bold text-black uppercase tracking-wider">Google Maps</span>
+</div>
+</div>
+<div class="group flex flex-col border border-black bg-white p-8 hover:bg-neutral-50 transition-all duration-300 min-h-0">
+<div class="flex items-center justify-between mb-6">
+<div class="flex h-12 w-12 items-center justify-center bg-black text-white">
+<span class="material-symbols-outlined">pipeline</span>
+</div>
+<a class="text-black hover:opacity-60 transition-opacity" href="https://github.com/MakarandPundlik/byte-my-dish" target="_blank" rel="noopener" aria-label="DevOps Pipeline project"><span class="material-symbols-outlined">arrow_outward</span></a>
+</div>
+<h4 class="text-black text-xl font-bold mb-3">DevOps CI/CD Pipeline</h4>
+<p class="text-neutral-600 text-sm leading-relaxed mb-8 flex-grow font-light min-h-0">
+                                CI/CD with GitHub Actions &amp; Jenkins. Automated testing (Playwright), security (Trivy, Semgrep), Docker &amp; Ansible. Recipe app (Node.js, MySQL) with feature flags.
+                            </p>
+<div class="flex flex-wrap gap-2 mt-auto border-t border-neutral-200 pt-4">
+<span class="text-xs font-bold text-black uppercase tracking-wider">GitHub Actions</span>
+<span class="text-xs font-bold text-black uppercase tracking-wider">Jenkins</span>
+<span class="text-xs font-bold text-black uppercase tracking-wider">Docker</span>
+</div>
+</div>
+<div class="group flex flex-col border border-black bg-white p-8 hover:bg-neutral-50 transition-all duration-300">
+<div class="flex items-center justify-between mb-6">
+<div class="flex h-12 w-12 items-center justify-center bg-black text-white">
+<span class="material-symbols-outlined">cloud</span>
+</div>
+<a class="text-black hover:opacity-60 transition-opacity" href="https://github.com/MakarandPundlik" target="_blank" rel="noopener" aria-label="Cloud Architecture project"><span class="material-symbols-outlined">arrow_outward</span></a>
+</div>
+<h4 class="text-black text-xl font-bold mb-3">Cloud Architecture Design</h4>
+<p class="text-neutral-600 text-sm leading-relaxed mb-8 flex-grow font-light">
+                                Designed a complete cloud solution from scratch: business and technical requirements, tradeoff analysis, data and control plane architecture with CloudFormation infrastructure.
+                            </p>
+<div class="flex flex-wrap gap-2 mt-auto border-t border-neutral-200 pt-4">
+<span class="text-xs font-bold text-black uppercase tracking-wider">AWS</span>
+<span class="text-xs font-bold text-black uppercase tracking-wider">CloudFormation</span>
+</div>
+</div>
+</div>
+</section>
+<section class="flex flex-col gap-6">
+<h3 class="text-black text-3xl font-bold leading-tight tracking-tight pb-4 border-b-2 border-black">Education</h3>
+<div class="flex flex-col gap-2">
+<h4 class="text-black text-xl font-bold">Master of Science in Computer Science</h4>
+<div class="text-black font-semibold text-base uppercase tracking-wider">North Carolina State University, Raleigh, NC</div>
+<span class="text-neutral-500 text-sm font-medium font-mono">August 2024 - May 2026 · CGPA: 3.89 / 4.0</span>
+<p class="text-neutral-600 text-sm font-light mt-1">Algorithms Design, Object Oriented Design, Cloud Architecture, Internet Protocols, DevOps, Software Engineering</p>
+</div>
+</section>
+</div>
+</main>
+<footer class="mt-auto border-t border-black bg-neutral-50 py-16">
+<div class="flex flex-col items-center justify-center gap-8 px-10">
+<div class="flex gap-12">
+<a class="group flex flex-col items-center gap-3 text-neutral-500 hover:text-black transition-colors" href="mailto:makarand.us@gmail.com" aria-label="Email">
+<div class="p-4 border border-neutral-300 bg-white group-hover:border-black group-hover:bg-black group-hover:text-white transition-all">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest">Email</span>
+</a>
+<a class="group flex flex-col items-center gap-3 text-neutral-500 hover:text-black transition-colors" href="https://github.com/MakarandPundlik" target="_blank" rel="noopener" aria-label="GitHub">
+<div class="p-4 border border-neutral-300 bg-white group-hover:border-black group-hover:bg-black group-hover:text-white transition-all">
+<span class="material-symbols-outlined">code</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest">GitHub</span>
+</a>
+<a class="group flex flex-col items-center gap-3 text-neutral-500 hover:text-black transition-colors" href="https://linkedin.com/in/makarand-pundlik" target="_blank" rel="noopener" aria-label="LinkedIn">
+<div class="p-4 border border-neutral-300 bg-white group-hover:border-black group-hover:bg-black group-hover:text-white transition-all">
+<span class="material-symbols-outlined">work</span>
+</div>
+<span class="text-xs font-bold uppercase tracking-widest">LinkedIn</span>
+</a>
+</div>
+<p class="text-neutral-400 text-xs font-mono mt-4">© 2025 Makarand Pundlik. All rights reserved.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
