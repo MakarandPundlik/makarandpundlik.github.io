@@ -1,283 +1,356 @@
 <!DOCTYPE html>
-<html class="light" lang="en"><head>
+<html lang="en">
+<head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Makarand Pundlik - Software Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#000000",
-                        "secondary": "#ffffff",
-                        "border-light": "#e5e5e5",
-                        "border-dark": "#000000",
-                    },
-                    fontFamily: {
-                        "display": ["Ubuntu", "sans-serif"],
-                        "body": ["Ubuntu", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0",
-                        "lg": "0",
-                        "xl": "0",
-                        "full": "0"
-                    },
-                },
-            },
-        }
-    </script>
-<style type="text/tailwindcss">
-        @layer utilities {
-            .bg-grid-pattern {
-                background-image: linear-gradient(to right, #f0f0f0 1px, transparent 1px),
-                linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
-                background-size: 40px 40px;
-            }
-        }
-    </style>
+<meta name="description" content="Makarand Pundlik, Software Engineer at AWS Identity. Building scalable distributed and cloud systems."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://makarandpundlik.github.io/"/>
+<meta property="og:title" content="Makarand Pundlik - Software Engineer"/>
+<meta property="og:description" content="Software Engineer at AWS Identity. Building scalable distributed and cloud systems."/>
+<meta name="twitter:card" content="summary"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233a3a3c'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='26' font-weight='700' fill='%23f5f5f7' text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+    --bg: #ececee;
+    --text: #1d1d1f;
+    --muted: #6e6e73;
+    --faint: #86868b;
+    --line: rgba(0, 0, 0, .08);
+    /* liquid glass: translucent fill + bright rim + specular edge */
+    --glass: linear-gradient(135deg, rgba(255,255,255,.55) 0%, rgba(255,255,255,.18) 100%);
+    --gloss: inset 0 1px 1px rgba(255,255,255,.95), inset 0 -1px 1px rgba(255,255,255,.35),
+             inset 0 0 0 1px rgba(255,255,255,.45), 0 8px 32px rgba(0,0,0,.08);
+    --blur: blur(24px) saturate(180%);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 44px; }
+body {
+    color: var(--text);
+    background:
+        radial-gradient(1200px 600px at 50% -10%, #ffffff 0%, transparent 70%),
+        linear-gradient(180deg, #f5f5f7 0%, var(--bg) 100%) fixed;
+    background-color: var(--bg);
+    /* SF Pro on Apple devices; Inter (closest open match) everywhere else */
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.47;
+    letter-spacing: -0.022em;
+    -webkit-font-smoothing: antialiased;
+}
+/* soft grey shapes drifting behind the glass so it has something to refract */
+body::before {
+    content: ""; position: fixed; inset: -20%; z-index: -1; pointer-events: none;
+    background:
+        radial-gradient(28% 32% at 18% 22%, #c7c7cc 0%, transparent 70%),
+        radial-gradient(30% 34% at 82% 30%, #d8d8dc 0%, transparent 70%),
+        radial-gradient(34% 30% at 70% 80%, #bdbdc2 0%, transparent 70%),
+        radial-gradient(26% 28% at 25% 78%, #e3e3e7 0%, transparent 70%);
+    filter: blur(40px);
+    animation: drift 30s ease-in-out infinite alternate;
+}
+@keyframes drift { to { transform: translate3d(4%, -3%, 0) rotate(8deg) scale(1.05); } }
+a { color: var(--text); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Global nav: frosted glass */
+.gnav {
+    position: sticky; top: 0; z-index: 10; height: 44px;
+    background: rgba(245, 245, 247, .72);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--line);
+}
+.gnav .inner {
+    max-width: 1024px; height: 100%; margin: 0 auto; padding: 0 22px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.gnav a { color: var(--text); font-size: 12px; letter-spacing: -0.01em; opacity: .75; transition: opacity .2s; }
+.gnav a:hover { opacity: 1; text-decoration: none; }
+.gnav .brand { font-size: 14px; font-weight: 600; opacity: 1; }
+.gnav .links { display: flex; gap: 32px; }
+
+/* Sections */
+.tile { padding: 110px 22px; text-align: center; }
+.tile .inner { max-width: 980px; margin: 0 auto; }
+.eyebrow { font-size: 21px; font-weight: 600; color: var(--faint); margin-bottom: 6px; letter-spacing: .011em; }
+.headline {
+    font-size: clamp(40px, 6vw, 56px); font-weight: 600; line-height: 1.07; letter-spacing: -0.005em;
+    /* brushed-metal sheen */
+    background: linear-gradient(180deg, #1d1d1f 30%, #6e6e73 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    padding-bottom: .06em;
+}
+.sub { font-size: clamp(19px, 2.2vw, 24px); color: var(--muted); max-width: 680px; margin: 16px auto 0; line-height: 1.33; letter-spacing: .009em; }
+
+/* Hero */
+.hero { padding: 160px 22px 140px; }
+.hero .headline { font-size: clamp(48px, 9vw, 96px); letter-spacing: -0.015em; }
+.buttons { margin-top: 36px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn {
+    display: inline-block; padding: 12px 26px; border-radius: 980px; font-size: 17px;
+    color: #fff; background: linear-gradient(180deg, rgba(72,72,74,.85) 0%, rgba(29,29,31,.85) 100%);
+    backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,.35), 0 4px 14px rgba(0,0,0,.18);
+    transition: transform .2s, box-shadow .2s;
+}
+.btn:hover { text-decoration: none; transform: translateY(-1px); box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 8px 20px rgba(0,0,0,.22); }
+.btn.ghost { color: var(--text); background: var(--glass); box-shadow: var(--gloss); }
+
+/* Chips */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 48px; }
+.chips span { background: var(--glass); box-shadow: var(--gloss); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); border-radius: 980px; padding: 10px 20px; font-size: 15px; }
+.chips.small { justify-content: flex-start; margin-top: auto; padding-top: 20px; gap: 8px; }
+.chips.small span { background: rgba(0,0,0,.045); box-shadow: none; color: var(--muted); padding: 5px 12px; font-size: 12px; }
+
+/* Glass cards */
+.grid, .edu { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 56px; text-align: left; }
+.card {
+    position: relative; overflow: hidden;
+    background: var(--glass); box-shadow: var(--gloss);
+    border-radius: 28px; padding: 40px;
+    backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+    display: flex; flex-direction: column;
+    transition: transform .4s cubic-bezier(.25,.1,.25,1), box-shadow .4s;
+}
+/* static specular highlight in the top-left corner */
+.card::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255,255,255,.6) 0%, rgba(255,255,255,0) 35%);
+}
+/* shine that sweeps across on hover */
+.card::after {
+    content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; pointer-events: none;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+    transform: skewX(-20deg); transition: left .9s cubic-bezier(.2,.8,.2,1);
+}
+.card:hover::after { left: 130%; }
+.card > * { position: relative; }
+.card:hover { transform: translateY(-3px); box-shadow: var(--gloss), 0 18px 44px rgba(0,0,0,.1); }
+.card.wide { grid-column: 1 / -1; }
+.card .when { font-size: 14px; color: var(--faint); font-weight: 500; }
+.card h3 { font-size: 28px; font-weight: 600; line-height: 1.14; margin-top: 8px; letter-spacing: .004em; }
+.card .org { font-size: 17px; color: var(--muted); margin-top: 4px; }
+.card p { color: var(--muted); margin-top: 12px; }
+.card ul { list-style: none; margin-top: 20px; }
+.card li { position: relative; padding-left: 18px; margin-bottom: 10px; font-size: 16px; }
+.card li::before { content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; border-radius: 50%; background: #aeaeb2; }
+.card .more { margin-top: 20px; font-size: 17px; font-weight: 500; }
+.card .badge {
+    align-self: flex-start; font-size: 11px; font-weight: 600; color: var(--muted);
+    letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px;
+    padding: 3px 10px; border-radius: 980px; background: rgba(0,0,0,.06);
+}
+.edu .card h3 { font-size: 24px; }
+
+/* Footer */
+footer { font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); }
+footer .inner { max-width: 980px; margin: 0 auto; padding: 20px 22px; }
+footer .top { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+footer .bottom { padding-top: 12px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+footer .bottom .links { display: flex; gap: 20px; }
+
+/* Scroll reveal (only when JS runs, and not for reduced motion) */
+.js .reveal { opacity: 0; transform: translateY(40px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+    .js .reveal { opacity: 1; transform: none; transition: none; }
+    body::before { animation: none; }
+    .card::after { display: none; }
+    html { scroll-behavior: auto; }
+}
+
+@media (max-width: 734px) {
+    .tile { padding: 72px 16px; }
+    .hero { padding: 96px 16px 88px; }
+    .gnav .inner { padding: 0 16px; }
+    .gnav .links { gap: 16px; }
+    .gnav a { white-space: nowrap; }
+    .gnav .links a[href="#education"] { display: none; }
+    .grid, .edu { grid-template-columns: 1fr; margin-top: 40px; }
+    .card { padding: 28px; border-radius: 22px; }
+    .card h3 { font-size: 24px; }
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
-<body class="bg-white text-black font-display min-h-screen flex flex-col antialiased selection:bg-black selection:text-white">
-<div class="relative flex w-full flex-col overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<header class="flex items-center justify-between whitespace-nowrap border-b border-black px-6 md:px-10 py-6 sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
-<div class="flex items-center gap-4">
-<div class="size-10 flex items-center justify-center bg-black text-white">
-<span class="material-symbols-outlined text-xl">terminal</span>
+<body>
+<nav class="gnav">
+<div class="inner">
+<a class="brand" href="#">Makarand Pundlik</a>
+<div class="links">
+<a href="#work">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#education">Education</a>
+<a href="mailto:makarand.us@gmail.com">Contact</a>
 </div>
-<h2 class="text-black text-xl font-bold leading-tight tracking-tight uppercase">Makarand Pundlik</h2>
 </div>
-<div class="hidden md:flex flex-1 justify-end gap-10 items-center">
-<nav class="flex items-center gap-10">
-<a class="text-neutral-600 hover:text-black transition-colors text-sm font-medium uppercase tracking-widest" href="#work">Work</a>
-<a class="text-neutral-600 hover:text-black transition-colors text-sm font-medium uppercase tracking-widest" href="#projects">Projects</a>
-<a class="text-neutral-600 hover:text-black transition-colors text-sm font-medium uppercase tracking-widest" href="#about">About</a>
 </nav>
-<a class="flex cursor-pointer items-center justify-center h-10 px-8 bg-black hover:bg-neutral-800 transition-colors text-white text-sm font-bold uppercase tracking-widest border border-black" href="mailto:makarand.us@gmail.com">
-<span class="truncate">Contact</span>
-</a>
-</div>
-<button class="md:hidden text-black" aria-label="Open menu">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</header>
-<main class="flex flex-col items-center px-4 md:px-10 lg:px-40 py-16">
-<div class="max-w-[1024px] w-full flex flex-col gap-24">
-<section class="@container">
-<div class="flex flex-col gap-10 md:gap-14 py-10 md:py-16">
-<div class="flex flex-col gap-8 text-left max-w-4xl">
-<h1 class="text-black text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight">
-                                Hi, I'm Makarand.<br/>
-<span class="text-neutral-500">Software Engineer building scalable cloud systems.</span>
-</h1>
-<h2 class="text-neutral-600 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
-                                Passionate about distributed systems, cloud computing, and full-stack development. Currently pursuing my Master's at <span class="text-black font-medium border-b border-black">North Carolina State University</span> (GPA 3.82/4.0).
-                            </h2>
-</div>
-<div class="flex flex-wrap gap-4">
-<a class="flex cursor-pointer items-center justify-center h-14 px-10 bg-black text-white hover:bg-neutral-800 transition-colors text-sm font-bold uppercase tracking-widest" href="#projects">View Projects</a>
+
+<main>
+<section class="tile hero">
+<div class="inner reveal">
+<p class="eyebrow">Software Engineer at AWS</p>
+<h1 class="headline">Hi, I'm Makarand.</h1>
+<p class="sub">Building scalable distributed and cloud systems.</p>
+<div class="buttons">
+<a class="btn" href="#work">See experience</a>
+<a class="btn ghost" href="#projects">View projects</a>
 </div>
 </div>
 </section>
-<section id="about">
-<h3 class="text-black text-sm font-bold uppercase tracking-widest mb-8 border-b border-black pb-2 inline-block">Tech Stack</h3>
-<div class="flex flex-wrap gap-3">
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">code</span><p class="text-black text-sm font-medium">TypeScript</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">javascript</span><p class="text-black text-sm font-medium">JavaScript</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">code</span><p class="text-black text-sm font-medium">Python</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">terminal</span><p class="text-black text-sm font-medium">Java</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">cloud</span><p class="text-black text-sm font-medium">AWS</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">deployed_code</span><p class="text-black text-sm font-medium">Docker</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">anchor</span><p class="text-black text-sm font-medium">Kubernetes</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">web</span><p class="text-black text-sm font-medium">React</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">javascript</span><p class="text-black text-sm font-medium">Node.js</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">web</span><p class="text-black text-sm font-medium">Angular</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">database</span><p class="text-black text-sm font-medium">DynamoDB</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">database</span><p class="text-black text-sm font-medium">PostgreSQL</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">database</span><p class="text-black text-sm font-medium">MongoDB</p></div>
-<div class="flex h-10 items-center justify-center gap-x-2 border border-black bg-white px-5 transition-transform hover:-translate-y-1"><span class="material-symbols-outlined text-black text-sm">database</span><p class="text-black text-sm font-medium">Elasticsearch</p></div>
+
+<section class="tile" id="about">
+<div class="inner reveal">
+<p class="eyebrow">Tech stack</p>
+<h2 class="headline">Tools of the trade.</h2>
+<div class="chips">
+<span>TypeScript</span><span>JavaScript</span><span>Python</span><span>Java</span>
+<span>AWS</span><span>Docker</span><span>Kubernetes</span><span>React</span>
+<span>Node.js</span><span>Angular</span><span>DynamoDB</span><span>PostgreSQL</span>
+<span>MongoDB</span><span>Elasticsearch</span><span>GCP</span><span>Cloud Run</span><span>Vertex AI</span>
+</div>
 </div>
 </section>
-<section class="flex flex-col gap-10" id="work">
-<h3 class="text-black text-3xl font-bold leading-tight tracking-tight pb-4 border-b-2 border-black">Experience</h3>
-<div class="group relative flex gap-8 pb-8 last:pb-0">
-<div class="mt-1 hidden sm:flex flex-col items-center">
-<div class="flex h-4 w-4 items-center justify-center bg-black"></div>
-<div class="h-full w-px bg-neutral-300 mt-0"></div>
+
+<section class="tile" id="work">
+<div class="inner">
+<div class="reveal">
+<p class="eyebrow">Experience</p>
+<h2 class="headline">Where I've built.</h2>
 </div>
-<div class="flex flex-1 flex-col gap-3">
-<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-<h4 class="text-black text-2xl font-bold">Software Engineer</h4>
-<span class="text-neutral-500 text-sm font-medium font-mono">Jul 2022 - Jul 2024</span>
+<div class="grid">
+
+<div class="card wide reveal">
+<span class="badge">Now</span>
+<span class="when">Oct 2026 – Present</span>
+<h3>Software Engineer</h3>
+<div class="org">Amazon Web Services · AWS Identity (IAM's parent org)</div>
+<p>Joining the AWS Identity organization, the team behind AWS IAM, to work on identity and access control at cloud scale.</p>
 </div>
-<div class="text-black font-semibold text-base uppercase tracking-wider mb-3">NICE Ltd, Pune, IN</div>
-<ul class="list-disc list-outside ml-5 text-neutral-700 text-base leading-relaxed mb-4 font-medium space-y-2">
-<li>Granted U.S. patent for AI-driven agent burnout detection; second patent filed and pending.</li>
-<li>Cut redundant AWS authorization calls by 95% by caching S3 tokens at the Lambda level instead of fetching them on the hot path.</li>
-<li>Designed and built a bulk-upload API returning pre-signed URLs in under 300ms at enterprise batch sizes.</li>
-<li>Merged AWS S3 and Azure Blob into one multi-cloud storage layer for enterprise archival, retrieval, and retention workflows across regions.</li>
-<li>Cleared 35+ Angular issues blocking a feature release in one sprint, then replaced manual QA with an automated Playwright regression suite.</li>
-<li>Reproduced the complex Cloud Storage API locally with LocalStack and Docker, shrinking the dev feedback loop by 60%.</li>
-<li>Monitored production health with CloudWatch dashboards and Grafana; led root-cause analysis on customer-facing escalations.</li>
+
+<div class="card wide reveal">
+<span class="when">Aug 2026 – Oct 2026</span>
+<h3>Software Engineer Intern</h3>
+<div class="org">Boom AI · Remote</div>
+<ul>
+<li>Designed a 3-stage takeoff pipeline covering 4 trades on Vertex AI Gemini and GCP, processing 250+ drawing sets and 10,000+ pages for 5 pilot estimators.</li>
+<li>Designed a scatter-gather path fanning pages across 8 parallel Cloud Run jobs with concurrent Gemini calls, 16 pages in flight, cutting a 300-page set from 30 minutes to 8 minutes.</li>
+<li>Architected per-tenant concurrency caps on Cloud Run instances, Jobs, and Gemini calls, keyed to Clerk organizations, so one tenant's large upload cannot starve another's.</li>
 </ul>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">AWS</span>
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Node.js</span>
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">TypeScript</span>
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Angular</span>
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Playwright</span>
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Docker</span>
+<div class="chips small"><span>GCP</span><span>Cloud Run</span><span>Vertex AI</span><span>Gemini</span><span>TypeScript</span></div>
 </div>
+
+<div class="card reveal">
+<span class="when">Jul 2022 – Jul 2024</span>
+<h3>Software Engineer</h3>
+<div class="org">NICE Ltd · Pune, India</div>
+<ul>
+<li>Granted U.S. patent for AI-driven agent burnout detection; second patent filed and pending.</li>
+<li>Combined AWS S3 and Azure Blob into one multi-cloud storage layer serving 20K customers and 15 PB, peaking at 3M file uploads per hour.</li>
+<li>Built a Java File Server microservice and a bulk-upload REST API that returned presigned URLs for 100 files per request in under 300ms, then cut redundant AWS authorization calls by 95% by caching S3 tokens in Lambda.</li>
+<li>Designed Node.js serverless services on Lambda, SQS, and EventBridge for pipelines, background processing, and automated retention.</li>
+<li>Recreated the Cloud Storage API locally with AWS SAM, LocalStack, and Docker, cutting debug loops by 60%.</li>
+<li>Replaced manual QA with a Playwright regression suite after clearing 35+ Angular issues that blocked a release.</li>
+</ul>
+<div class="chips small"><span>AWS</span><span>Java</span><span>Node.js</span><span>TypeScript</span><span>Angular</span><span>Playwright</span><span>Docker</span></div>
 </div>
-</div>
-<div class="group relative flex gap-8 pb-8 last:pb-0">
-<div class="mt-1 hidden sm:flex flex-col items-center">
-<div class="flex h-4 w-4 items-center justify-center bg-black"></div>
-<div class="h-full w-px bg-neutral-300 mt-0"></div>
-</div>
-<div class="flex flex-1 flex-col gap-3">
-<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-<h4 class="text-black text-2xl font-bold">Software Engineer Intern</h4>
-<span class="text-neutral-500 text-sm font-medium font-mono">Aug 2021 - Mar 2022</span>
-</div>
-<div class="text-black font-semibold text-base uppercase tracking-wider mb-3">IMATMI, New Jersey, Remote</div>
-<ul class="list-disc list-outside ml-5 text-neutral-700 text-base leading-relaxed mb-4 font-medium space-y-2">
+
+<div class="card reveal">
+<span class="when">Aug 2021 – Mar 2022</span>
+<h3>Software Engineer Intern</h3>
+<div class="org">IMATMI · New Jersey (Remote)</div>
+<ul>
 <li>Built a full-stack MERN mentoring portal for 200+ concurrent users with geolocation-based matching, role-based access control, and real-time WebSocket chat.</li>
 <li>Secured multi-tenant authentication flows with OAuth 2.0, JWT tokens, bcrypt hashing, and Redis-backed OTP caching across student, mentor, and admin interfaces.</li>
 <li>Designed a mentor matching algorithm on location, language, age, and symptom-duration signals so students got paired with more relevant mentors.</li>
 </ul>
-<div class="flex flex-wrap gap-2">
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">Node.js</span>
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">React</span>
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">MongoDB</span>
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">OAuth 2.0</span>
-<span class="inline-flex items-center border border-neutral-300 bg-neutral-50 px-3 py-1 text-xs font-bold text-black uppercase tracking-wider">WebSocket</span>
+<div class="chips small"><span>Node.js</span><span>React</span><span>MongoDB</span><span>OAuth 2.0</span><span>WebSocket</span></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="tile" id="projects">
+<div class="inner">
+<div class="reveal">
+<p class="eyebrow">Projects</p>
+<h2 class="headline">Built on the side.</h2>
+</div>
+<div class="grid">
+<div class="card reveal">
+<h3>LLM Full Stack Application</h3>
+<p>A RAG assistant backend on Node.js and AWS that unifies business context from Slack, Zoom, HubSpot, and Salesforce, so users get answers in one place instead of switching between apps.</p>
+<a class="more" href="https://github.com/MakarandPundlik/unified-context-rag" target="_blank" rel="noopener">View on GitHub ›</a>
+<div class="chips small"><span>Node.js</span><span>AWS</span><span>RAG</span><span>TypeScript</span></div>
+</div>
+<div class="card reveal">
+<h3>AWS Backend Application</h3>
+<p>A messaging backend with Lambda, SQS, API Gateway WebSocket connections, and DynamoDB, with AES encryption at rest and in transit.</p>
+<a class="more" href="https://github.com/CampusCrush1-0/back-end" target="_blank" rel="noopener">View on GitHub ›</a>
+<div class="chips small"><span>Lambda</span><span>SQS</span><span>DynamoDB</span></div>
+</div>
+<div class="card reveal">
+<h3>DevOps Pipeline</h3>
+<p>A GitHub Actions + Jenkins pipeline that runs 33 Playwright end-to-end tests and 50+ unit tests on every merge, plus Trivy vulnerability scans and Semgrep code quality checks.</p>
+<a class="more" href="https://github.com/MakarandPundlik/byte-my-dish" target="_blank" rel="noopener">View on GitHub ›</a>
+<div class="chips small"><span>GitHub Actions</span><span>Jenkins</span><span>Playwright</span><span>Trivy</span></div>
+</div>
+<div class="card reveal">
+<h3>Pack Travel</h3>
+<p>A Django and PostgreSQL travel-planning platform with modular REST APIs, Google Maps route visualization, group itinerary management, and ride-pairing workflows.</p>
+<a class="more" href="https://github.com/MakarandPundlik/PackTravel" target="_blank" rel="noopener">View on GitHub ›</a>
+<div class="chips small"><span>Django</span><span>PostgreSQL</span><span>Google Maps</span></div>
 </div>
 </div>
 </div>
 </section>
-<section class="flex flex-col gap-10" id="projects">
-<h3 class="text-black text-3xl font-bold leading-tight tracking-tight pb-4 border-b-2 border-black">Featured Projects</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="group flex flex-col border border-black bg-white p-8 hover:bg-neutral-50 transition-all duration-300">
-<div class="flex items-center justify-between mb-6">
-<div class="flex h-12 w-12 items-center justify-center bg-black text-white">
-<span class="material-symbols-outlined">psychology</span>
+
+<section class="tile" id="education">
+<div class="inner">
+<div class="reveal">
+<p class="eyebrow">Education</p>
+<h2 class="headline">Always learning.</h2>
 </div>
-<a class="text-black hover:opacity-60 transition-opacity" href="https://github.com/MakarandPundlik/unified-context-rag" target="_blank" rel="noopener" aria-label="LLM Full Stack Application project"><span class="material-symbols-outlined">arrow_outward</span></a>
+<div class="edu">
+<div class="card reveal">
+<span class="when">Aug 2024 – May 2026 · GPA 3.82 / 4.0</span>
+<h3>M.S. in Computer Science</h3>
+<div class="org">North Carolina State University · Raleigh, NC</div>
 </div>
-<h4 class="text-black text-xl font-bold mb-3">LLM Full Stack Application</h4>
-<p class="text-neutral-600 text-sm leading-relaxed mb-8 flex-grow font-light">
-                                Built a RAG assistant backend on Node.js and AWS that unified business context from Slack, Zoom, HubSpot, and Salesforce, so users got answers in one place instead of switching between apps.
-                            </p>
-<div class="flex flex-wrap gap-2 mt-auto border-t border-neutral-200 pt-4">
-<span class="text-xs font-bold text-black uppercase tracking-wider">Node.js</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">AWS</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">RAG</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">TypeScript</span>
-</div>
-</div>
-<div class="group flex flex-col border border-black bg-white p-8 hover:bg-neutral-50 transition-all duration-300">
-<div class="flex items-center justify-between mb-6">
-<div class="flex h-12 w-12 items-center justify-center bg-black text-white">
-<span class="material-symbols-outlined">cloud</span>
-</div>
-<a class="text-black hover:opacity-60 transition-opacity" href="https://github.com/CampusCrush1-0/back-end" target="_blank" rel="noopener" aria-label="AWS Backend Application project"><span class="material-symbols-outlined">arrow_outward</span></a>
-</div>
-<h4 class="text-black text-xl font-bold mb-3">AWS Backend Application</h4>
-<p class="text-neutral-600 text-sm leading-relaxed mb-8 flex-grow font-light">
-                                Built a messaging backend with Lambda, SQS, API Gateway WebSocket connections, and DynamoDB, with AES encryption at rest and in transit.
-                            </p>
-<div class="flex flex-wrap gap-2 mt-auto border-t border-neutral-200 pt-4">
-<span class="text-xs font-bold text-black uppercase tracking-wider">AWS Lambda</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">SQS</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">DynamoDB</span>
-</div>
-</div>
-<div class="group flex flex-col border border-black bg-white p-8 hover:bg-neutral-50 transition-all duration-300 min-h-0">
-<div class="flex items-center justify-between mb-6">
-<div class="flex h-12 w-12 items-center justify-center bg-black text-white">
-<span class="material-symbols-outlined">pipeline</span>
-</div>
-</div>
-<h4 class="text-black text-xl font-bold mb-3">DevOps Pipeline</h4>
-<p class="text-neutral-600 text-sm leading-relaxed mb-8 flex-grow font-light min-h-0">
-                                Designed a GitHub Actions + Jenkins pipeline that runs 33 Playwright end-to-end tests and 50+ unit tests on every merge, plus Trivy vulnerability scans and Semgrep code quality checks.
-                            </p>
-<div class="flex flex-wrap gap-2 mt-auto border-t border-neutral-200 pt-4">
-<span class="text-xs font-bold text-black uppercase tracking-wider">GitHub Actions</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">Jenkins</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">Playwright</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">Trivy</span>
-</div>
-</div>
-<div class="group flex flex-col border border-black bg-white p-8 hover:bg-neutral-50 transition-all duration-300">
-<div class="flex items-center justify-between mb-6">
-<div class="flex h-12 w-12 items-center justify-center bg-black text-white">
-<span class="material-symbols-outlined">map</span>
-</div>
-<a class="text-black hover:opacity-60 transition-opacity" href="https://github.com/MakarandPundlik/PackTravel" target="_blank" rel="noopener" aria-label="PackTravel project"><span class="material-symbols-outlined">arrow_outward</span></a>
-</div>
-<h4 class="text-black text-xl font-bold mb-3">Pack Travel</h4>
-<p class="text-neutral-600 text-sm leading-relaxed mb-8 flex-grow font-light">
-                                Built a Django and PostgreSQL travel-planning platform with modular REST APIs, Google Maps route visualization, group itinerary management, and ride-pairing workflows.
-                            </p>
-<div class="flex flex-wrap gap-2 mt-auto border-t border-neutral-200 pt-4">
-<span class="text-xs font-bold text-black uppercase tracking-wider">Django</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">PostgreSQL</span>
-<span class="text-xs font-bold text-black uppercase tracking-wider">Google Maps</span>
+<div class="card reveal">
+<span class="when">Aug 2018 – Jul 2022 · GPA 3.79 / 4.0</span>
+<h3>B.E. in E&amp;TC</h3>
+<div class="org">Pune Institute of Computer Technology · Pune, India</div>
 </div>
 </div>
 </div>
 </section>
-<section class="flex flex-col gap-6">
-<h3 class="text-black text-3xl font-bold leading-tight tracking-tight pb-4 border-b-2 border-black">Education</h3>
-<div class="flex flex-col gap-6">
-<div class="flex flex-col gap-2">
-<h4 class="text-black text-xl font-bold">Master of Science in Computer Science</h4>
-<div class="text-black font-semibold text-base uppercase tracking-wider">North Carolina State University, Raleigh, NC</div>
-<span class="text-neutral-500 text-sm font-medium font-mono">Aug 2024 - May 2026 · GPA: 3.82 / 4.0</span>
-<p class="text-neutral-600 text-sm font-light mt-1">Algorithms Design, Object-Oriented Design, Cloud Architecture, DevOps, Software Engineering</p>
-</div>
-<div class="flex flex-col gap-2">
-<h4 class="text-black text-xl font-bold">Bachelor of Engineering in E&amp;TC</h4>
-<div class="text-black font-semibold text-base uppercase tracking-wider">Pune Institute of Computer Technology, Pune, India</div>
-<span class="text-neutral-500 text-sm font-medium font-mono">Aug 2018 - Jul 2022 · GPA: 3.79 / 4.0</span>
-<p class="text-neutral-600 text-sm font-light mt-1">Object-Oriented Programming, Computer Networks, Data Structures and Algorithms</p>
-</div>
-</div>
-</section>
-</div>
 </main>
-<footer class="mt-auto border-t border-black bg-neutral-50 py-16">
-<div class="flex flex-col items-center justify-center gap-8 px-10">
-<div class="flex gap-12">
-<a class="group flex flex-col items-center gap-3 text-neutral-500 hover:text-black transition-colors" href="mailto:makarand.us@gmail.com" aria-label="Email">
-<div class="p-4 border border-neutral-300 bg-white group-hover:border-black group-hover:bg-black group-hover:text-white transition-all">
-<span class="material-symbols-outlined">mail</span>
+
+<footer>
+<div class="inner">
+<div class="top">Open to conversations about distributed systems, cloud infrastructure, and identity. Reach out at <a href="mailto:makarand.us@gmail.com">makarand.us@gmail.com</a>.</div>
+<div class="bottom">
+<span>Copyright © 2026 Makarand Pundlik. All rights reserved.</span>
+<div class="links">
+<a href="https://github.com/MakarandPundlik" target="_blank" rel="noopener">GitHub</a>
+<a href="https://www.linkedin.com/in/makarand-pundlik" target="_blank" rel="noopener">LinkedIn</a>
 </div>
-<span class="text-xs font-bold uppercase tracking-widest">Email</span>
-</a>
-<a class="group flex flex-col items-center gap-3 text-neutral-500 hover:text-black transition-colors" href="https://github.com/MakarandPundlik" target="_blank" rel="noopener" aria-label="GitHub">
-<div class="p-4 border border-neutral-300 bg-white group-hover:border-black group-hover:bg-black group-hover:text-white transition-all">
-<span class="material-symbols-outlined">code</span>
 </div>
-<span class="text-xs font-bold uppercase tracking-widest">GitHub</span>
-</a>
-<a class="group flex flex-col items-center gap-3 text-neutral-500 hover:text-black transition-colors" href="https://www.linkedin.com/in/makarand-pundlik" target="_blank" rel="noopener" aria-label="LinkedIn">
-<div class="p-4 border border-neutral-300 bg-white group-hover:border-black group-hover:bg-black group-hover:text-white transition-all">
-<span class="material-symbols-outlined">work</span>
-</div>
-<span class="text-xs font-bold uppercase tracking-widest">LinkedIn</span>
-</a>
-</div>
-<p class="text-neutral-400 text-xs font-mono mt-4">© 2025 Makarand Pundlik. All rights reserved.</p>
 </div>
 </footer>
-</div>
-</div>
-</body></html>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
