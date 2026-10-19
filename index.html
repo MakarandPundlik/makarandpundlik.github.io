@@ -62,8 +62,15 @@ section.block { padding: 104px 0; border-top: 1px solid var(--line); }
 .head .label { color: var(--muted); }
 
 /* Stack: a single quiet line of words */
-.stack { font-size: 17px; line-height: 2; max-width: 900px; }
-.stack span:not(:last-child)::after { content: " / "; color: var(--muted); }
+.stack { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+.stack div { padding: 28px 0; }
+.stack div + div { padding-left: 32px; border-left: 1px solid var(--line); }
+.stack .label { display: block; color: var(--muted); margin-bottom: 10px; }
+.stack p { font-family: var(--serif); font-size: 24px; line-height: 1.4; }
+@media (max-width: 760px) {
+    .stack { grid-template-columns: 1fr; }
+    .stack div + div { padding-left: 0; border-left: 0; border-top: 1px solid var(--line); }
+}
 
 /* Experience: editorial two-column rows */
 .row { display: grid; grid-template-columns: 260px 1fr; gap: 48px; padding: 48px 0; border-top: 1px solid var(--line); }
@@ -134,9 +141,11 @@ footer nav { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
 <section class="block" id="about">
 <div class="wrap reveal">
 <div class="head"><h2>Tech Stack</h2></div>
-<p class="stack">
-<span>TypeScript</span><span>JavaScript</span><span>Python</span><span>Java</span><span>AWS</span><span>Docker</span><span>Kubernetes</span><span>React</span><span>Node.js</span><span>Angular</span><span>DynamoDB</span><span>PostgreSQL</span><span>MongoDB</span><span>Elasticsearch</span><span>GCP</span><span>Cloud Run</span><span>Vertex AI</span>
-</p>
+<div class="stack">
+<div><span class="label">Languages</span><p>TypeScript, Java, Python</p></div>
+<div><span class="label">Cloud</span><p>AWS, GCP, Docker, Kubernetes</p></div>
+<div><span class="label">Frameworks &amp; Data</span><p>Node.js, React, PostgreSQL, DynamoDB</p></div>
+</div>
 </div>
 </section>
 
